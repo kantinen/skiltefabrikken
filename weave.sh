@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (c) 2013 Datalogisk Kantineforening
+# Copyright (c) 2013 Datalogisk Kantineforening.
 # Licenseret under EUPL, version 1.1 udelukkende.
 # Licensteksten: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl
 
@@ -11,14 +11,14 @@ function help {
   echo "Som udgangspunkt smokes der et portrætskilt med dansk hoved og fod"
   echo "ud til ./output/skilt.pdf. Du har dog andre muligheder:"
   echo ""
-  echo "  -l          For et vandret skilt"
-  echo "  -e          For english header and footer"
-  echo "  -o [FILE]   For at angive et navn andet end 'skilt'."
+  echo "  -l          For et vandret skilt."
+  echo "  -e          For English header and footer."
+  echo "  -o [PATH]   For at angive et navn andet end 'skilt'."
   echo "  -h          For at se denne tekst."
 }
 
 function usage {
-  echo "Usage: $0 [OPTIONS] [FILE]"
+  echo "Usage: $0 [OPTIONS] [PATH]"
 }
 
 function usage_try {
