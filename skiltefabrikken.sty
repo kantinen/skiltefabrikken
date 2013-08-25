@@ -55,10 +55,6 @@
 \NewDocumentCommand\hovedoverskrift{m}{%
   \renewcommand\@hovedoverskrift{#1}%
 }
-\newcommand\@hovedunderskrift{}
-\NewDocumentCommand\hovedunderskrift{m}{%
-  \renewcommand\@hovedunderskrift{#1}%
-}
 \RenewDocumentCommand\maketitle{}{%
   \ifdanish%
   \def\kantineHoved{kantine-tekst}%
@@ -94,12 +90,11 @@
 %  \end{textblock}%
 %
   \begin{textblock}{120}(15,42)%
-    {\fontfamily{cmr}\fontsize{35.83}{35.83}\selectfont\textrm{\textbf{%
-      \@hovedoverskrift}}}\vspace{0.25cm}\\%
-    \null%
-    \hspace{0.6cm}{\fontsize{17.28}{17.28}\selectfont\@hovedunderskrift}%
+    {\fontfamily{cmr}\fontsize{35.83}{35.83}\selectfont%
+      \textrm{\textbf{\@hovedoverskrift}}%
+    }%
   \end{textblock}%
-%
+
   \fontsize{17.28}{17.28}\selectfont%
 }
 
