@@ -1,3 +1,5 @@
 *.aux
 *.log
 output/*
+english/*pdf
+dansk/*pdf
