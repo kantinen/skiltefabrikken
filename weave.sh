@@ -16,6 +16,9 @@ function help {
   echo "  -b          For en blank skabelon."
   echo "  -o [PATH]   For at angive et navn andet end 'skilt'."
   echo "  -h          For at se denne tekst."
+  echo ""
+  echo "NB! Stien til TeX-filen med skiltets indhold skal altid angives som"
+  echo "det sidste argument til skalprogrammet."
 }
 
 function usage {
