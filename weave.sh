@@ -11,9 +11,6 @@ function help {
   echo "Som udgangspunkt smokes der et portrætskilt med dansk hoved og fod"
   echo "ud til ./output/skilt.pdf. Du har dog andre muligheder:"
   echo ""
-  echo "  -l          For et vandret skilt."
-  echo "  -e          For English header and footer."
-  echo "  -b          For en blank skabelon."
   echo "  -o [PATH]   For at angive et navn andet end 'skilt'."
   echo "  -h          For at se denne tekst."
   echo ""
@@ -30,16 +27,11 @@ function usage_try {
   echo "Try '$0 -h' for more information."
 }
 
-PORTRAIT="true"
-DANISH="true"
-NOTBLANK="true"
 JOBNAME="skilt"
 
-while getopts ":helbo:" option; do
+while getopts ":ho:" option; do
   case "$option" in
-    l)  PORTRAIT="false" ;;
-    e)  DANISH="false" ;;
-    b)  NOTBLANK="false" ;;
+    m)  DANISH="true" ;;
     o)  JOBNAME="$OPTARG" ;;
     h)  help
         exit 0
@@ -63,38 +55,20 @@ if [ -z $TEXTNAME ]; then
   exit 1
 fi
 
-BASENAME="main.tex"
-
-if [ ! -f $BASENAME ]; then
-    echo "Error: \"$BASENAME\" doesn't seem to be a file."
-    exit 1
-fi
-
 if [ ! -f $TEXTNAME ]; then
     echo "Error: \"$TEXTNAME\" doesn't seem to be a file."
     exit 1
 fi
 
-echo $BASENAME
 echo $TEXTNAME
 
-# Fjern filendelserne:
-BASENAME="${BASENAME%.*}"
+# Fjern filendelsen:
 TEXTNAME="${TEXTNAME%.*}"
-
 
 OUTDIR="./output/"
 mkdir -p $OUTDIR
 
-COMMAND=$( cat <<EOF
-\\newif\\ifportrait\\portrait$PORTRAIT
-\\newif\\ifdanish\\danish$DANISH
-\\newif\\ifnotblank\\notblank$NOTBLANK
-\\newcommand\\content[0]{\\input{$TEXTNAME}}\\input{$BASENAME}
-EOF
-)
-
 pdflatex -output-directory=$OUTDIR -file-line-error \
   -jobname $JOBNAME \
-  $COMMAND
+  $TEXTNAME
 

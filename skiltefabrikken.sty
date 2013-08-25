@@ -1,0 +1,124 @@
+% Copyright (c) 2013 Datalogisk Kantineforening.
+% Licenseret under EUPL, version 1.1 udelukkende.
+% Licensteksten: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl
+
+\ProvidesPackage{skiltefabrikken}
+
+\newif\ifportrait\portraittrue
+\newif\ifdanish\danishtrue
+\DeclareOption{landscape}{\portraitfalse}
+\DeclareOption{portrait}{\portraittrue}
+\DeclareOption{english}{\danishfalse}
+\DeclareOption{danish}{\danishtrue}
+\DeclareOption{multi}{\danishtrue}
+\ProcessOptions\relax
+
+% Papirstørrelse, margin, layout.
+\PassOptionsToPackage{a4paper, hmargin={2.5cm, 3cm}, vmargin={7cm,3.7cm}}%
+{geometry}
+
+\ifportrait
+\else
+  \PassOptionsToPackage{landscape}{geometry}
+\fi
+
+\RequirePackage{geometry}
+
+% Grafik
+\RequirePackage{eso-pic}
+\RequirePackage{graphicx}
+
+% Indkodning of brydning
+\PassOptionsToPackage{utf8}{inputenc}
+\RequirePackage{inputenc}
+\PassOptionsToPackage{english,danish}{babel}
+\RequirePackage{babel}
+
+% Skrifttype
+\RequirePackage{mathpazo}
+\PassOptionsToPackage{scaled}{helvet}
+\RequirePackage{helvet}
+\renewcommand*\familydefault{\sfdefault}
+\PassOptionsToPackage{T1}{fontenc}
+\RequirePackage{fontenc}
+
+% Abitrært tekstpositionering.
+\PassOptionsToPackage{absolute,overlay}{textpos}
+\RequirePackage{textpos}
+  % Angivelse af størrelsesenheden for textpos.
+  \setlength{\TPHorizModule}{1mm}
+  \setlength{\TPVertModule}{1mm}
+
+\RequirePackage{xparse}
+
+\newcommand\@hovedoverskrift{}
+\NewDocumentCommand\hovedoverskrift{m}{%
+  \renewcommand\@hovedoverskrift{#1}%
+}
+\RenewDocumentCommand\maketitle{}{%
+  \ifdanish%
+  \def\kantineHoved{kantine-tekst}%
+  \else%
+  \def\kantineHoved{kantine-text}%
+  \fi%
+
+  \ifportrait%
+  \AddToShipoutPicture*{\put(-260,680){\includegraphics*{logo}}}%
+  \AddToShipoutPicture*{\put(0,0){\includegraphics*{\kantineHoved}}}%
+  \else%
+  \AddToShipoutPicture*{\put(-20,430){\includegraphics*{logo}}}%
+  \AddToShipoutPicture*{\put(0,-240){\includegraphics*{\kantineHoved}}}%
+  \fi%
+%
+  \begin{textblock}{120}(15,42)%
+    {\fontfamily{cmr}\fontsize{35.83}{40}\selectfont\textrm{\textbf{%
+      \@hovedoverskrift}}}%
+  \end{textblock}%
+%
+  \fontsize{17.28}{17.28}\selectfont%
+}
+
+\NewDocumentCommand\underskriv{}{%
+  \null%
+  \vfill%
+  \rm\Large%
+  \ifportrait%
+  \begin{textblock}{100}(90,256)%
+  \else%
+  \begin{textblock}{100}(177,170)%
+  \fi%
+  \begin{flushright}%
+  \ifdanish%
+    Med venlig hilsen,\\%
+    Datalogisk Kantineforening\\%
+    - drevet af frivillige studerende siden 1974%
+  \else%
+    Kind regards,\\%
+    Canteen Association\\%
+    - run by volunteer students since 1974%
+  \fi%
+  \end{flushright}%
+  \end{textblock}%
+}
+
+\NewDocumentCommand\overskrift{m}{%
+  \vspace{0.5cm}%
+  \begin{center}%
+    \fontsize{40}{40}\selectfont\bf #1%
+  \end{center}%
+  \vspace{0.7cm}%
+}
+
+\NewDocumentCommand\overoverskrift{m}{%
+  \vspace{0.5cm}%
+  \begin{center}%
+    \fontsize{60}{60}\selectfont\bf #1%
+  \end{center}%
+  \vspace{0.7cm}%
+}
+
+\NewDocumentCommand\english{}{\color{gray}}
+\NewDocumentCommand\dansk{}{\color{black}}
+
+\pagestyle{empty}
+
