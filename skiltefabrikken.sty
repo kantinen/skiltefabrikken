@@ -61,7 +61,7 @@
   \else%
   \def\kantineHoved{kantine-text}%
   \fi%
-
+%
   \ifportrait%
   \AddToShipoutPicture*{\put(-260,680){\includegraphics*{logo}}}%
   \AddToShipoutPicture*{\put(0,0){\includegraphics*{\kantineHoved}}}%
@@ -70,8 +70,27 @@
   \AddToShipoutPicture*{\put(0,-240){\includegraphics*{\kantineHoved}}}%
   \fi%
 %
+%  \begin{textblock}{120}(13,18)%
+%    {\fontfamily{cmr}\selectfont\textsc{\textbf{\LARGE%
+%      \ifdanish%
+%        Datalogisk Kantineforening%
+%      \else%
+%        Canteen Association%
+%      \fi%
+%      \vskip 0.05cm%
+%      \Large%
+%      \ifdanish%
+%        K\o benhavns Universitet%
+%      \else%
+%        University of Copenhagen%
+%      \fi%
+%      \vskip 0.2cm%
+%      \rm \texttt{kantine@diku.dk}%
+%    }}}%
+%  \end{textblock}%
+%
   \begin{textblock}{120}(15,42)%
-    {\fontfamily{cmr}\fontsize{35.83}{40}\selectfont\textrm{\textbf{%
+    {\fontfamily{cmr}\fontsize{35.83}{35.83}\selectfont\textrm{\textbf{%
       \@hovedoverskrift}}}%
   \end{textblock}%
 %
