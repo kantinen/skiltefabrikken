@@ -37,6 +37,8 @@
 
 \thispagestyle{empty}
 
+\ifnotblank
+
 \ifdanish
 \def\header{kantine-tekst}
 \else
@@ -53,6 +55,9 @@
 \null
 \vspace{4cm}
 
+\else
+\fi % notblank
+
 \newlength{\mywidth}
 \setlength{\mywidth}{\textwidth}
 \addtolength{\mywidth}{-1cm}
@@ -65,6 +70,8 @@
 
 \null
 \vfill
+
+\ifnotblank
 
 \rm
 
@@ -82,4 +89,8 @@ Canteen Association\\
 \fi
 \end{flushright}
 
+\else
+\fi % notblank
+
 \end{document}
+

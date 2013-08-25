@@ -13,6 +13,7 @@ function help {
   echo ""
   echo "  -l          For et vandret skilt."
   echo "  -e          For English header and footer."
+  echo "  -b          For en blank skabelon."
   echo "  -o [PATH]   For at angive et navn andet end 'skilt'."
   echo "  -h          For at se denne tekst."
 }
@@ -28,12 +29,14 @@ function usage_try {
 
 PORTRAIT="true"
 DANISH="true"
+NOTBLANK="true"
 JOBNAME="skilt"
 
-while getopts ":helo:" option; do
+while getopts ":helbo:" option; do
   case "$option" in
     l)  PORTRAIT="false" ;;
     e)  DANISH="false" ;;
+    b)  NOTBLANK="false" ;;
     o)  JOBNAME="$OPTARG" ;;
     h)  help
         exit 0
@@ -83,6 +86,7 @@ mkdir -p $OUTDIR
 COMMAND=$( cat <<EOF
 \\newif\\ifportrait\\portrait$PORTRAIT
 \\newif\\ifdanish\\danish$DANISH
+\\newif\\ifnotblank\\notblank$NOTBLANK
 \\newcommand\\content[0]{\\input{$TEXTNAME}}\\input{$BASENAME}
 EOF
 )
