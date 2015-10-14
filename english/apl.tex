@@ -1,0 +1,95 @@
+% Copyright (c) 2013 Datalogisk Kantineforening.
+% Licenseret under EUPL, version 1.1 udelukkende.
+% Licensteksten: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl
+
+\documentclass{article}
+
+\usepackage[paperheight=10.5cm,paperwidth=14cm,margin=1cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage[english]{skiltefabrikken}
+
+\AddToShipoutPicture*{\put(335,240){
+  \includegraphics*[scale=0.7]{logo-pink.pdf}}}%
+
+\AddToShipoutPicture*{\put(-27,-265){
+  \includegraphics*[scale=0.7]{kantine-tekst.pdf}}}%
+
+\def\arraystretch{1.2}
+
+\begin{document}
+
+~\vspace{1cm}
+
+\Large
+
+\begin{center}
+
+\fontsize{20}{20}\selectfont
+
+\textbf{Please pay for your sweets!}
+
+\end{center}
+
+%\vspace{0.5cm}
+
+%\vspace{0.1cm}
+
+\large
+
+\begin{minipage}{0.5\textwidth}
+
+\begin{center}
+
+Use this box if you have cash
+
+\vspace{0.7cm}
+
+MobilePay: 71 47 14 40 \textbf{NB!} please use the identifier \textbf{APL}
+
+\end{center}
+
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+
+\begin{center}
+
+%\begin{tabular}{r|l}
+\begin{tabular}{|p{2.2cm}|p{2.2cm}|}
+\hline
+\textbf{Item} & \textbf{Price} \\\hline
+&\\\hline
+&\\\hline
+&\\\hline
+&\\\hline
+&\\\hline
+&\\\hline
+&\\\hline
+%Daim & \texttt{06,00} \\
+%Haribo & \texttt{10,00} \\
+%Knoppers & \texttt{04,50} \\
+%Mars & \texttt{11,00} \\
+%Ritter Sport & \texttt{15,00} \\
+%Skittles & \texttt{13,00}\\\hline
+\end{tabular}
+
+\end{center}
+
+\end{minipage}
+
+\normalsize
+
+\vspace{\fill}
+
+~
+
+\begin{textblock}{100}(33,87)
+
+\begin{flushright}
+The Computer Science Canteen Association\\
+-- run by volunteer students since 1974
+\end{flushright}
+
+\end{textblock}
+
+\end{document}
