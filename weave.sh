@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright (c) 2013 Datalogisk Kantineforening.
+# Copyright (c) 2013-2017 Datalogisk Kantineforening.
 # Licenseret under EUPL, version 1.1 udelukkende.
 # Licensteksten: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl
 
