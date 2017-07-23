@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Copyright (c) 2013 Datalogisk Kantineforening.
 # Licenseret under EUPL, version 1.1 udelukkende.
