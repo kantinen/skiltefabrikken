@@ -4,22 +4,22 @@
 
 \documentclass{article}
 
-\usepackage[paperheight=10.5cm,paperwidth=14cm,margin=1cm]{geometry}
+\usepackage[paperheight=14cm,paperwidth=10.5cm,margin=1cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{array}
-\usepackage[danish]{skiltefabrikken}
+\usepackage[danish,portrait]{skiltefabrikken}
 
-\AddToShipoutPicture*{\put(-25,225){
+\AddToShipoutPicture*{\put(-125,325){
   \includegraphics*[scale=0.5]{logo.pdf}}}%
 
-\AddToShipoutPicture*{\put(-27,-265){
+\AddToShipoutPicture*{\put(-27,-165){
   \includegraphics*[scale=0.7]{kantine-tekst.pdf}}}%
 
 \def\arraystretch{1.2}
 
 \begin{document}
 
-~\vspace{1cm}
+~\vspace{1.3cm}
 
 \Large
 
@@ -29,15 +29,16 @@
 
 \textbf{PROTIP}
 
+\vspace{0.5cm}
+
+\includegraphics[scale=0.2]{billeder/stole-op.jpg}
+
 \vspace{0.3cm}
-
-\includegraphics[scale=0.16]{billeder/stole-op.jpg}
-
-\vspace{0.1cm}
 
 \fontsize{15}{15}\selectfont
 
-Sæt stolene op onsdag --- Få rent gulv torsdag
+Sæt stolene op \textbf{\underline{onsdag}};\\ få rent gulv
+\textbf{\underline{torsdag}}.
 
 \end{center}
 
@@ -48,7 +49,7 @@ Sæt stolene op onsdag --- Få rent gulv torsdag
 
 ~
 
-\begin{textblock}{100}(33,87)
+\begin{textblock}{100}(0,125)
 
 \begin{flushright}
 Datalogisk Kantineforening\\
