@@ -1,0 +1,57 @@
+% Copyright (c) 2013 Datalogisk Kantineforening.
+% Licenseret under EUPL, version 1.1 udelukkende.
+% Licensteksten: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl
+
+\documentclass{article}
+
+\usepackage[paperheight=14cm,paperwidth=10.5cm,margin=1cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage[danish,portrait]{skiltefabrikken}
+
+\AddToShipoutPicture*{\put(-125,325){
+  \includegraphics*[scale=0.5]{logo.pdf}}}%
+
+\AddToShipoutPicture*{\put(-27,-165){
+  \includegraphics*[scale=0.7]{kantine-tekst.pdf}}}%
+
+\def\arraystretch{1.2}
+
+\begin{document}
+
+~\vspace{1.3cm}
+
+\Large
+
+\begin{center}
+
+\fontsize{30}{30}\selectfont
+
+\textbf{TILBUD!!1}
+
+\vspace{0.5cm}
+
+\includegraphics[scale=0.3]{billeder/sommersby.jpg}
+
+\vspace{0.3cm}
+
+\textbf{12,-}
+
+\end{center}
+
+\normalsize
+
+\vspace{\fill}
+
+~
+
+\begin{textblock}{100}(0,125)
+
+\begin{flushright}
+Datalogisk Kantineforening\\
+-- drevet af frivillige studerende siden 1974
+\end{flushright}
+
+\end{textblock}
+
+\end{document}
